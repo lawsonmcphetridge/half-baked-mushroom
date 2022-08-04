@@ -58,28 +58,25 @@ addFriendButton.addEventListener('click', () => {
 });
 
 function displayFriends() {
-
     friendsEl.textContent = '';
     for (let friend of friendData) {
         const friendEl = renderFriend(friend);
-        
+
         friendEl.addEventListener('click', () => {
+            if (friend.satisfaction === 3) {
+                alert('You have ate too many mushrooms!');
+                displayFriends();
+                displayMushrooms();
+            }
             if (friend.satisfaction < 3 && mushroomCount > 0) {
                 friend.satisfaction++;
                 mushroomCount--;
                 displayFriends();
                 displayMushrooms();
-                
             }
-               
-        }
-             
-            
-            
-        );
+        });
         friendsEl.append(friendEl);
     }
-       
 }
 
 function displayMushrooms() {
@@ -89,8 +86,6 @@ function displayMushrooms() {
         const mushroomCount = renderMushroom(mushroomsEl);
 
         mushroomsEl.append(mushroomCount);
-
-
     }
 }
 
