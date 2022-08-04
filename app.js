@@ -77,7 +77,7 @@ function displayFriends() {
             
             
         );
-        friendsEl.append(friendEl)
+        friendsEl.append(friendEl);
     }
        
 }
