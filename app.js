@@ -51,7 +51,7 @@ addFriendButton.addEventListener('click', () => {
 
     if (newFriend.name === '') {
         newFriend.name = Math.floor(Math.random() * 3);
-    };
+    }
 
     friendData.push(newFriend);
 
@@ -73,7 +73,7 @@ function displayFriends() {
                 displayMushrooms();
             }
             if (mushroomCount === 0) {
-                alert('go hunt for more mushrooms!')
+                alert('go hunt for more mushrooms!');
             }
             if (friend.satisfaction < 3 && mushroomCount > 0) {
                 friend.satisfaction++;
