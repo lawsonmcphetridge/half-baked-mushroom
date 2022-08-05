@@ -49,6 +49,10 @@ addFriendButton.addEventListener('click', () => {
         satisfaction: 1,
     };
 
+    if (newFriend.name === '') {
+        newFriend.name = Math.floor(Math.random() * 3);
+    };
+
     friendData.push(newFriend);
 
     // reset the input
@@ -67,6 +71,9 @@ function displayFriends() {
                 alert('You have ate too many mushrooms!');
                 displayFriends();
                 displayMushrooms();
+            }
+            if (mushroomCount === 0) {
+                alert('go hunt for more mushrooms!')
             }
             if (friend.satisfaction < 3 && mushroomCount > 0) {
                 friend.satisfaction++;
